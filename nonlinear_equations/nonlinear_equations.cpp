@@ -77,8 +77,9 @@ int main()
 	while (abs(x - x1) >= 0.00001)
 	{
 		x1 = x0;
-		x0 = abs(f(x1));
+		x = abs(f(x1));
 		x = x1;
+		x0 = x;
 		k++;
 	}
 	cout << x<<endl<<k<<endl;
