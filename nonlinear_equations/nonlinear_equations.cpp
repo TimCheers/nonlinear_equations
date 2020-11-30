@@ -70,15 +70,15 @@ int main()
 	setlocale(LC_ALL, "ru");
 	srand(time(NULL));
 	double x, x0, x1;
-	x0 =0.25 /*rand() / float(RAND_MAX)*/;
+	x0 =rand() / float(RAND_MAX);
 	x = 1;
 	x1 = x0;
 	int k=0;
 	while (abs(x - x1) >= 0.00001)
 	{
-		x = abs(f(x0));
 		x1 = x0;
-		x0 = x;
+		x0 = abs(f(x1));
+		x = x1;
 		k++;
 	}
 	cout << x<<endl<<k<<endl;
