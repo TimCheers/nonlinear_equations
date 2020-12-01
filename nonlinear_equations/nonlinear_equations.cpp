@@ -16,7 +16,7 @@ double f(double x)
 	return f;	
 }
 
-double pf(double x)
+double pf(double x)             //производная
 {
 	double pf;
 	pf = pow(e, x) + pow(e, -x);
@@ -65,24 +65,23 @@ double fun2()
 	return x;
 }
 
+double fun3()
+{
+	srand(time(NULL));
+	double x=0, x0;
+	x0 = rand() / float(RAND_MAX);
+	do
+	{
+		x0 = x;
+		x = log(pow(e, -x) + 2);
+	} while (abs(x - x0) >= 0.0000001);
+	return x;
+}
+
 int main()
 {
-	setlocale(LC_ALL, "ru");
-	srand(time(NULL));
-	double x, x0, x1;
-	x0 =rand() / float(RAND_MAX);
-	x = 1;
-	x1 = x0;
-	int k=0;
-	while (abs(x - x1) >= 0.00001)
-	{
-		x1 = x0;
-		x = abs(f(x1));
-		x = x1;
-		x0 = x;
-		k++;
-	}
-	cout << x<<endl<<k<<endl;
+	cout << fun1() << endl << fun2() << endl  << fun3() << endl;
+	
 }
 
 
