@@ -28,7 +28,6 @@ double fun1()
 	double x, a = 0, b = 1, x0, f_a, f_b, f_x0;
 	f_a = f(a);
 	f_b = f(b);
-	int k = 0;
 	while (b - a > 0.00001)
 	{
 		x0 = (a + b) / 2;
@@ -44,7 +43,6 @@ double fun1()
 			f_a = f_x0;
 		}
 		x = (a + b) / 2;
-		k++;
 	}
 	return x;
 }
