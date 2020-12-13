@@ -73,7 +73,7 @@ double fun3()
 	do
 	{
 		x0 = x;
-		x = log(pow(e, -x) + 2);
+		x = log(pow(e, -x0) + 2);
 	} while (abs(x - x0) >= 0.0000001);
 	return x;
 }
